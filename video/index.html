@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>视频播放</title>
+		<link rel="stylesheet" href="css/css.css" />
+		<link rel="stylesheet" href="css/font-awesome.css" />
+	</head>
+
+	<body>
+		<h3 class="playerTitle">视频播放器</h3>
+		<div class="player">
+			<!--<video src="mp4/chrome.mp4"></video>-->
+			<!--谷歌下引入视频需要些绝对完整地址，不然无法实现点击进度条跳转播放-->
+			<video src="http://www.runoob.com/try/demo_source/movie.mp4"></video>
+			<div class="controls">
+				<a href="javascript:;" class="switch fa fa-play"></a>
+				<a href="javascript:;" class="expand fa fa-expand"></a>
+				<div class="progress">
+					<div class="bar"></div>
+					<div class="loaded"></div>
+					<div class="elapse"></div>
+				</div>
+				<div class="time">
+					<span class="currentTime">00:00:00</span> \
+					<span class="totalTime">00:00:00</span>
+				</div>
+			</div>
+		</div>
+		<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				//定义通用函数，用来转换时间显示格式
+				function parseTime(time) {
+					var h = Math.floor(time / 3600)
+					h = h > 10 ? h : "0" + h
+					var sec = Math.floor((time - h * 3600) / 60)
+					sec = sec > 10 ? sec : "0" + sec
+					var min = Math.floor(time - h * 3600 - sec * 60)
+					min = min > 10 ? min : "0" + min
+					return `${h}:${sec}:${min}`
+				}
+				/*获取各个标签*/
+				var video = $("video").get(0); //播放器
+				var sw = $(".switch"); //开启与暂停
+				var expand = $(".expand"); //全屏
+				var bar = $(".bar"); //触发事件的条
+				var loaded = $(".loaded"); //加载进度条
+				var elapse = $(".elapse"); //播放进度条
+				var currentTime = $(".currentTime"); //当前时间
+				var totalTime = $(".totalTime"); //总时间
+				var player = $(".player"); //播放器容器
+				var controls = $(".controls"); //控制区域容器
+				/*视频加载完成之后：设置video显示、设置时间显示*/
+//				video.oncanplay = function() {
+					setTimeout(() => {
+						//video元素显示	
+						video.style.display = "block";
+						//时间显示:调用提前封装的函数 parseTime
+						currentTime.html(parseTime(video.currentTime))
+						totalTime.html(parseTime(video.duration))
+					}, 2000)
+
+//				}
+				/*设置播放与暂停*/
+				sw.click(function() {
+					//判断视频视频处于暂停状态
+					if(video.paused) {
+//						//判断视频是否可以播放
+//						if(video.readyState != 4) {
+//							alert("视频未加载完成");
+//							return;
+//						}
+						//如果是
+						//切换图标
+						$(this).toggleClass("fa-play").toggleClass("fa-pause")
+						//显示video标签
+						video.style.display = "block";
+						//播放视频
+						video.play();
+					} else {
+						//如果不是
+						//切换图标
+						$(this).toggleClass("fa-play").toggleClass("fa-pause")
+						//暂停视频播放
+						video.pause();
+					}
+				})
+				//设置视频播放过程设置
+				video.ontimeupdate = function() {
+					//设置播放进度条
+					var pre = (this.currentTime / this.duration) * 100 + "%"; //转换百分比数据
+					elapse.css("width", pre); //设置进度条
+					currentTime.html(parseTime(video.currentTime))
+					//模拟加载进度条：播放超过一半时直接显示加载完毕效果
+					if((this.currentTime / this.duration) >= 0.5) {
+						loaded.animate({
+							width: "100%"
+						}, 1000, "linear")
+					}
+				}
+				//播放完成以后设置
+				video.onended = function() {
+					sw.toggleClass("fa-play").toggleClass("fa-pause");
+				}
+				//实现视频跳播
+				bar.click(function(e) {
+					//获取鼠标位置：x
+					//获取bar左侧坐标：x
+					//获取bar的总长度
+					//var point = e.clientX;
+					//var barLeft = $(this).offset();
+					//var totalL = $(this).width();
+					//计算并设置视屏播放的当前时间
+					video.currentTime = video.duration * (e.clientX - $(this).offset().left) / $(this).width()
+				})
+				/*设置全屏功能*/
+				expand.click(function() {
+					//判断是否处于屏状态
+					if(document.fullscreenElement || document.webkitFullscreenElement) {
+						//如果是:关闭全屏
+						try {
+							document.mozCancelFullScreen()
+						} catch(e) {
+							document.webkitCancelFullScreen()
+						}
+					} else {
+						//如果不是：开启全屏
+						try {
+							player[0].requestFullscreen()
+						} catch(e) {
+							player[0].webkitRequestFullScreen()
+						}
+					}
+				})
+			})
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<script src="https://cdn.staticfile.org/jquery/1.12.4/jquery.min.js"></script>
+		<script src="js/jquery.fullPage.min.js"></script>
+		<!--全局初始化css-->
+		<link rel="stylesheet" href="https://cdn.staticfile.org/minireset.css/0.0.2/minireset.min.css" />
+		<title>fullpage</title>
+	</head>
+	<!--
+		插件使用：不用太过在意API，需要时查询文档即可。
+	-->
+	<style type="text/css">
+		.section {
+			font-size: 16px;
+			color: black;
+			transition: all 0.5s;
+		}
+		.current{
+			font-size: 32px;
+			color: red;
+		}
+	</style>
+
+	<body>
+		<!--复制代码结构:插件会添加必要的包裹层，最终显示的html比我们现在看到的要复杂的多-->
+		<div id="scpage">
+			<div class="section"></div>
+			<div class="section"></div>
+			<div class="section"></div>
+			<div class="section"></div>
+			<div class="section"></div>
+		</div>
+		<script>
+			//源代码教程地址
+			$(function() {
+				if(confirm("直接学源码")){
+					location.href = "http://www.jq22.com/jquery-info1124"
+				}
+				console.log("参考地址：http://www.jq22.com/jquery-info1124")
+			})
+			//调用插件--及传入参数配置
+			$(function() {
+				$('#scpage').fullpage({
+					//设置每一屏幕的背景颜色
+					sectionsColor: ['#0da5d6', '#2AB561', '#DE8910', '#16BA9D', '#0DA5D6'],
+					//设置滚动到某一屏幕时的回掉函数 : 锚链接名称，序号（1...）
+					afterLoad: function(anchorLing, index) {
+						setTimeout(function(){
+							//滚动到某一屏幕时添加效果
+							$(".section").eq(index - 1).html("这是第" + index + "屏").addClass("current").siblings().removeClass("current").empty();
+						},50)
+						
+					}
+				});
+			});
+		</script>
+	</body>
+
+</html>
