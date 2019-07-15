@@ -16,7 +16,6 @@ a {
     text-align: center;
 }
 .player{
-    width: 720px;
     height: 360px;
     margin: 0 auto;
     background: url("../images/loading.gif") center no-repeat;
@@ -30,7 +29,7 @@ video{
    	/*visibility: hidden;*/
 }
 .controls {
-    width: 720px;
+   	width: 100%;
     height: 40px;
     position: absolute;
     left: 0px;
@@ -58,7 +57,7 @@ video{
     top: 10px;
 }
 .controls > .progress{
-    width: 430px;
+   	width: calc(100% - 210px);
     height: 10px;
     position: absolute;
     left:40px;
@@ -99,7 +98,7 @@ video{
 .controls > .time{
     height: 20px;
     position: absolute;
-    left:490px;
+    right: 40px;
     top: 10px;
     color: #fff;
     font-size: 14px;
