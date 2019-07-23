@@ -1,5 +1,54 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-# HTML5-19年暑假
+- [HTML5](#html5)
+  - [新元素兼容问题](#%E6%96%B0%E5%85%83%E7%B4%A0%E5%85%BC%E5%AE%B9%E9%97%AE%E9%A2%98)
+  - [表单部分](#%E8%A1%A8%E5%8D%95%E9%83%A8%E5%88%86)
+    - [新的type类型](#%E6%96%B0%E7%9A%84type%E7%B1%BB%E5%9E%8B)
+    - [新的表单属性](#%E6%96%B0%E7%9A%84%E8%A1%A8%E5%8D%95%E5%B1%9E%E6%80%A7)
+    - [新增的表单元素](#%E6%96%B0%E5%A2%9E%E7%9A%84%E8%A1%A8%E5%8D%95%E5%85%83%E7%B4%A0)
+    - [新增的表单事件](#%E6%96%B0%E5%A2%9E%E7%9A%84%E8%A1%A8%E5%8D%95%E4%BA%8B%E4%BB%B6)
+  - [进度条/度量器](#%E8%BF%9B%E5%BA%A6%E6%9D%A1%E5%BA%A6%E9%87%8F%E5%99%A8)
+  - [媒体元素](#%E5%AA%92%E4%BD%93%E5%85%83%E7%B4%A0)
+  - [新增DOM操作](#%E6%96%B0%E5%A2%9Edom%E6%93%8D%E4%BD%9C)
+    - [DOM获取](#dom%E8%8E%B7%E5%8F%96)
+    - [样式操作](#%E6%A0%B7%E5%BC%8F%E6%93%8D%E4%BD%9C)
+    - [自定义属性](#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B1%9E%E6%80%A7)
+  - [新增接口](#%E6%96%B0%E5%A2%9E%E6%8E%A5%E5%8F%A3)
+    - [网络接口](#%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A3)
+    - [全屏接口](#%E5%85%A8%E5%B1%8F%E6%8E%A5%E5%8F%A3)
+    - [拖拽接口](#%E6%8B%96%E6%8B%BD%E6%8E%A5%E5%8F%A3)
+    - [定位接口](#%E5%AE%9A%E4%BD%8D%E6%8E%A5%E5%8F%A3)
+      - [第三方地图接口](#%E7%AC%AC%E4%B8%89%E6%96%B9%E5%9C%B0%E5%9B%BE%E6%8E%A5%E5%8F%A3)
+    - [本地存储](#%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8)
+    - [应用缓存](#%E5%BA%94%E7%94%A8%E7%BC%93%E5%AD%98)
+    - [多媒体接口](#%E5%A4%9A%E5%AA%92%E4%BD%93%E6%8E%A5%E5%8F%A3)
+- [CSS3](#css3)
+  - [基本情况](#%E5%9F%BA%E6%9C%AC%E6%83%85%E5%86%B5)
+  - [新增选择器](#%E6%96%B0%E5%A2%9E%E9%80%89%E6%8B%A9%E5%99%A8)
+    - [属性选择器](#%E5%B1%9E%E6%80%A7%E9%80%89%E6%8B%A9%E5%99%A8)
+    - [伪类选择器](#%E4%BC%AA%E7%B1%BB%E9%80%89%E6%8B%A9%E5%99%A8)
+  - [颜色值问题](#%E9%A2%9C%E8%89%B2%E5%80%BC%E9%97%AE%E9%A2%98)
+  - [文字阴影/标签阴影](#%E6%96%87%E5%AD%97%E9%98%B4%E5%BD%B1%E6%A0%87%E7%AD%BE%E9%98%B4%E5%BD%B1)
+  - [盒子模型](#%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B)
+  - [圆角属性](#%E5%9C%86%E8%A7%92%E5%B1%9E%E6%80%A7)
+  - [渐变色](#%E6%B8%90%E5%8F%98%E8%89%B2)
+  - [背景相关](#%E8%83%8C%E6%99%AF%E7%9B%B8%E5%85%B3)
+  - [过渡及动画](#%E8%BF%87%E6%B8%A1%E5%8F%8A%E5%8A%A8%E7%94%BB)
+  - [2d转换](#2d%E8%BD%AC%E6%8D%A2)
+  - [3d转换](#3d%E8%BD%AC%E6%8D%A2)
+  - [元素居中](#%E5%85%83%E7%B4%A0%E5%B1%85%E4%B8%AD)
+  - [2d+居中/时钟案例](#2d%E5%B1%85%E4%B8%AD%E6%97%B6%E9%92%9F%E6%A1%88%E4%BE%8B)
+  - [字体问题](#%E5%AD%97%E4%BD%93%E9%97%AE%E9%A2%98)
+  - [多列布局](#%E5%A4%9A%E5%88%97%E5%B8%83%E5%B1%80)
+  - [弹性布局](#%E5%BC%B9%E6%80%A7%E5%B8%83%E5%B1%80)
+  - [一个全屏插件](#%E4%B8%80%E4%B8%AA%E5%85%A8%E5%B1%8F%E6%8F%92%E4%BB%B6)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+
+# HTML5
 
 ## 新元素兼容问题
 
@@ -471,7 +520,7 @@ images/l44.jpg images/l4.jpg
   - ontimeupdate： 在播放进度更新时触发
   - onended：视频方法完毕时触发
 
-# CSS3-19年暑假
+# CSS3
 
 ## 基本情况
 
