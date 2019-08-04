@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="Keywords" content="sc、孙晨"/>
+		<meta name="Description" content="前端技术研究，原创学习资料" />
+		<meta name="author" content="孙晨" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="shortcut icon" href="favicon.ico" />
+		<link rel="stylesheet" href="index.css" />
+		<title>在线点名</title>
+		<script src="https://hm.baidu.com/hm.js?9bb1efd9da97543aa201f16c2cdf9a1f"></script>
+		<!--[if IE]>
+			<script>
+			alert("本项目不兼容IE9及以下浏览器")
+		</script>
+		<![endif]-->
+	</head>
+	<body>
+		<form autocomplete="off">
+			<!--切换班级-->
+			<select>
+				<option value="web-17-01">17级前端1班</option>
+				<option value="web-17-02">17级前端2班</option>
+				<option value="web-18-01" selected="selected">18级前端1班</option>
+				<option value="web-18-02">18级前端2班</option>
+				<option value="web-19-01" disabled="disabled" title="无数据">19级前端1班</option>
+				<option value="web-19-02" disabled="disabled" title="无数据">19级前端2班</option>
+			</select>
+			<!--输入数量-->
+			<input type="number" class="num" placeholder="输入人数" autofocus="autofocus" />
+			<input type="button" class="start" value="开始" />
+			<a href="javascript:;" class="help">我的班级</a>
+		</form>
+		<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script id="students" src="lib/web-18-01.js"></script>
+		<script src="index.js"></script>
+	</body>
+
+</html>

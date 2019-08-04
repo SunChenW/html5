@@ -1,0 +1,80 @@
+			@media only screen and (max-width:768px) {
+				span {
+					width: 50px !important;
+					height: 50px !important;
+					line-height: 50px !important;
+					font-size: 16px !important;
+				}
+			}
+			
+			@keyframes ani {
+				from {
+					transform: scale(1, 1);
+				}
+				to {
+					transform: scale(1.5, 1.5);
+				}
+			}
+			/*解决移动端不支持阻止默认事件*/
+			
+			* {
+				touch-action: pan-y;
+			}
+			
+			body {
+				background-color: lightblue;
+			}
+			
+			span {
+				animation: ani 1s linear infinite alternate-reverse;
+				width: 100px;
+				height: 100px;
+				border-radius: 50%;
+				line-height: 100px;
+				text-align: center;
+				position: fixed;
+				font-size: 30px;
+				color: white;
+				cursor: pointer;
+				/*设置字体间距是0*/
+				word-spacing: 0;
+				/*设置文字溢出*/
+				white-space: nowrap;
+				overflow: hidden;
+				/*字体*/
+				font-family: "微软雅黑";
+			}
+			
+			input[type=text] {
+				width: 100px;
+				height: 20px;
+				border-radius: 5px;
+				z-index: 999;
+				position: relative;
+			}
+			
+			input[type=number] {
+				width: 100px;
+				height: 20px;
+				border-radius: 5px;
+				z-index: 999;
+				position: relative;
+			}
+			
+			input[type=button] {
+				position: relative;
+				z-index: 999;
+			}
+			
+			select {
+				width: 100px;
+				height: 25px;
+				border-radius: 5px;
+				z-index: 999;
+				position: relative;
+			}
+			
+			a {
+				color: darkgray;
+				text-decoration: none;
+			}
