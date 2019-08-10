@@ -22,9 +22,14 @@
 			}
 			
 			body {
-				background-color: lightblue;
+				/*background-color: lightblue;*/
 			}
-			
+			canvas{
+				position: fixed;
+				top: 0;
+				left: 0;
+			}
+
 			span {
 				animation: ani 1s linear infinite alternate-reverse;
 				width: 100px;
