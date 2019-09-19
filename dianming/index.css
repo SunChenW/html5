@@ -56,19 +56,25 @@
 				border-radius: 5px;
 				z-index: 999;
 				position: relative;
+				border:none;
+				background-color:transparent;
 			}
 			
-			input[type=number] {
+			.typetext {
 				width: 100px;
 				height: 20px;
 				border-radius: 5px;
 				z-index: 999;
 				position: relative;
+				border:none;
+				background-color:transparent;
 			}
 			
 			input[type=button] {
 				position: relative;
 				z-index: 999;
+				border:none;
+				background-color:transparent;
 			}
 			
 			select {
@@ -77,6 +83,12 @@
 				border-radius: 5px;
 				z-index: 999;
 				position: relative;
+				border:none;
+				background-color:transparent;
+				appearance:none;
+				webkit-appearance:none;
+				moz-appearance:none;
+				ms-appearance:none;
 			}
 			
 			a {
