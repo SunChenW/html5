@@ -86,9 +86,9 @@
 				border:none;
 				background-color:transparent;
 				appearance:none;
-				webkit-appearance:none;
-				moz-appearance:none;
-				ms-appearance:none;
+				-webkit-appearance:none;
+				-moz-appearance:none;
+				-ms-appearance:none;
 			}
 			
 			a {
