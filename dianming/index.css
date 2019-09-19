@@ -61,9 +61,9 @@
 			}
 			
 			.typetext {
-				width: 100px;
+				width: 30px;
 				height: 20px;
-				border-radius: 5px;
+				border-radius: 3px;
 				z-index: 999;
 				position: relative;
 				border:none;
@@ -75,6 +75,7 @@
 				z-index: 999;
 				border:none;
 				background-color:transparent;
+				padding:0;
 			}
 			
 			select {
@@ -89,6 +90,7 @@
 				-webkit-appearance:none;
 				-moz-appearance:none;
 				-ms-appearance:none;
+				text-align:center;
 			}
 			
 			a {
