@@ -95,8 +95,9 @@ $(function() {
 				})
 				/*班级选择后插入班级数据*/
 				$("select").change(function() {
+					console.log(students)
 					$("#students").remove();
-					$(".num").attr("placeholder",students.lenght)
+					$(".num").attr("placeholder",students.length)
 					$("<script>")
 						.attr({
 							id: "students",
