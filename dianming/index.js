@@ -97,7 +97,6 @@ $(function() {
 				$("select").change(function() {
 					console.log(students)
 					$("#students").remove();
-					$(".num").attr("placeholder",students.length)
 					$("<script>")
 						.attr({
 							id: "students",
@@ -105,6 +104,7 @@ $(function() {
 						})
 						.appendTo($("body"))
 					console.log("切换班级数据")
+//					$(".num").attr("placeholder",students.length)
 				})
 				/*输入数字后可直接开始抽奖*/
 				$("input[type=number]").keydown(function(e) {
