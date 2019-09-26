@@ -96,7 +96,7 @@ $(function() {
 				/*班级选择后插入班级数据*/
 				$("select").change(function() {
 					$("#students").remove();
-					$(".num").attr("placeholder",students)
+					$(".num").attr("placeholder",students.lenght)
 					$("<script>")
 						.attr({
 							id: "students",
