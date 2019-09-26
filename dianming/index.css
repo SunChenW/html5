@@ -49,7 +49,10 @@
 				/*字体*/
 				font-family: "微软雅黑";
 			}
-			
+			input{
+				border: none;
+				outline: none;
+			}
 			.typetext {
 				width: 30px;
 				height: 20px;
