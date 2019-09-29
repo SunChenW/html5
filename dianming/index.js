@@ -24,6 +24,11 @@ $(function() {
 							backgroundColor: "rgba(" + Math.floor(Math.random() * 256) + "," + Math.floor(Math.random() * 256) + "," + Math.floor(Math.random() * 256) + ",0.7)"
 						})
 						.attr("draggable", true)
+						.click(function(){
+							var url = "https://fanyi.baidu.com/gettts?lan=zh&text="+encodeURI(this.innerHTML)+"&spd=5&source=web";
+							$("audio").attr("src",url)
+							$("audio").get(0).play()
+						})
 						//显示在页面中
 						.appendTo($("body"))
 				}
