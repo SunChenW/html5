@@ -138,7 +138,8 @@ $(function() {
 							position: "static",
 							float: "left",
 							//禁用所有鼠标事件
-							"pointer-events":"dblclick"
+							"pointer-events":"dblclick",
+							"animation": "none"
 						})
 					}
 					if($("span").length>0 && e.keyCode == 83){
@@ -146,7 +147,8 @@ $(function() {
 							position: "fixed",
 							float: "none",
 							//允许所有鼠标事件
-							"pointer-events":"all"
+							"pointer-events":"all",
+							"animation": "ani 1s linear infinite alternate-reverse"
 						})
 					}
 				})
