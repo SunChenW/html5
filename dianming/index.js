@@ -36,7 +36,7 @@ $(function() {
 				$(".start").click(function() {
 					choose = [];
 					//获取及判断输入人数
-					var num = parseInt($(".num").val())
+					
 					if(num == ""){
 						//新一轮之前删除原来的
 						$("span").remove();
@@ -44,7 +44,11 @@ $(function() {
 						for(var i = 0; i < students.length; i++) {
 							creat();
 						}
-					}else if(num > students.length || num + "" == "NaN") {
+						
+						return;
+					}
+					var num = parseInt($(".num").val())
+					if(num > students.length || num + "" == "NaN") {
 						alert("请输入1~" + students.length + "的数字");
 						$(".num").val("")
 					} else {
