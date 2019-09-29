@@ -25,8 +25,8 @@ $(function() {
 						})
 						.attr("draggable", true)
 						.dblclick(function(){
-//							var url = "https://fanyi.baidu.com/gettts?lan=zh&text="+encodeURI(this.innerHTML)+"&spd=5&source=web";
-							var url = "http://api.microsofttranslator.com/V2/http.svc/Speak?appId=T1SFn9FAo2EWBYxgrhbfX1ubMIZPl_lz2neWTxnmxbUWb9O0LSU0qthztQSP87Kmv&text="+encodeURI(this.innerHTML)+"&language=zh-CN&format=audio%2fmp3"
+							var url = "https://fanyi.baidu.com/gettts?lan=zh&text="+encodeURI(this.innerHTML)+"&spd=3&source=web";
+//							var url = "http://api.microsofttranslator.com/V2/http.svc/Speak?appId=T1SFn9FAo2EWBYxgrhbfX1ubMIZPl_lz2neWTxnmxbUWb9O0LSU0qthztQSP87Kmv&text="+encodeURI(this.innerHTML)+"&language=zh-CN&format=audio%2fmp3"
 							$("audio").attr("src",url)
 							$("audio").get(0).play()
 						})
